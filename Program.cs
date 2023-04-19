@@ -15,7 +15,7 @@ for (int i = 0; i < array.Length; i++)
 
 for (int i = 0; i < array.Length; i++)
 {
-    if (i == 0)
+    if (i == firstNumberInArray)
     {
         if (array[i] > array[i + rightNeighbor])
         {
