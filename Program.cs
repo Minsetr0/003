@@ -13,27 +13,24 @@ for (int i = 0; i < array.Length; i++)
     array[i] = random.Next(minNumberInArray, maxNumberInArray);
 }
 
-for (int i = 0; i < array.Length; i++)
+if (array[firstNumberInArray] > array[firstNumberInArray + rightNeighbor])
 {
-    if (i == firstNumberInArray)
-    {
-        if (array[i] > array[i + rightNeighbor])
-        {
-            Console.Write(array[i] + " ");
-        }
-    }
-    else if (i != firstNumberInArray && i != array.Length)
+    Console.Write(array[firstNumberInArray] + " ");
+}
+
+
+for (int i = 1; i < array.Length - 1; i++)
+{
+    if (i != firstNumberInArray && i != array.Length)
     {
         if (array[i] > array[i + leftNeighbor] && array[i] > array[i + rightNeighbor])
         {
             Console.Write(array[i] + " ");
         }
     }
-    else if (i == array.Length)
-    {
-        if (array[i] > array[i + leftNeighbor])
-        {
-            Console.Write(array[i] + " ");
-        }
-    }
+}
+
+if (array[array.Length - 1] > array[array.Length + leftNeighbor - 1])
+{
+    Console.Write(array[array.Length - 1] + " ");
 }
